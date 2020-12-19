@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
     this.carService.getAllCar()
     .subscribe((response) => {
       this.cars = response;
+      console.log(`the cars is here : ${this.cars[0].cabTypeName}`);
     });
-    console.log(`the cars is here : ${this.cars}`);
   }
 
 }

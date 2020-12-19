@@ -1,4 +1,4 @@
 export interface Car {
-    CabTypeId: number;
-    CabTypeName: string;
+    cabTypeId: number;
+    cabTypeName: string;
 }

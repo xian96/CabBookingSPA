@@ -23,7 +23,7 @@ export class ApiService {
 
   }
 
-  GetOne(path: string, id?: number): Observable<any> {
+  getOne(path: string, id?: number): Observable<any> {
 
     let getUrl: string;
 
@@ -38,9 +38,17 @@ export class ApiService {
     .pipe(map((response) => response as any));
   }
 
-  Create(path: string, resource: any, options?: any): Observable<any> {
+  create(path: string, resource: any, options?: any): Observable<any> {
     return this.http
     .post(`${environment.apiUrl}${path}`, resource, {headers: this.headers} )
     .pipe(map((response) => response));
+  }
+
+  update(){
+
+  }
+
+  delete(){
+    
   }
 }
