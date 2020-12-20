@@ -17,11 +17,11 @@ export class BookingFormComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       p => {
-        this.bookingHistoryId = + p.get('id');
+        this.bookingId = + p.get('id');
         // make a call to movie service to get moe details;
-        this.bookingHistoryService.getBookingHistoryById(this.bookingHistoryId)
+        this.bookingService.getBookingById(this.bookingId)
         .subscribe((response) => {
-          this.bookingHistory = response;
+          this.booking = response;
         });
       }
     );
@@ -29,7 +29,7 @@ export class BookingFormComponent implements OnInit {
   }
 
   update(){
-    this.bookingHistoryService.updateBookingHistory(this.bookingHistory).subscribe(
+    this.bookingService.updateBooking(this.booking).subscribe(
       (response) => {
       },
       (err: any) => {
