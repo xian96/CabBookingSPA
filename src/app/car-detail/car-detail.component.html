@@ -6,7 +6,7 @@
     <div class="card-body">
       <h5 class="card-title">Name: {{ carDetail.cabTypeName }}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Id: {{ carDetail.cabTypeId }}</h6>
-      <a (click)="update(carDetail.cabTypeId)" class="btn btn-warning ">Update link</a>
+      <a [routerLink]="['/carForm', carDetail.cabTypeId]" class="btn btn-warning ">Update link</a>
       <a (click)="delete(carDetail.cabTypeId)" class="btn btn-danger float-right">Delete link</a>
     </div>
   </div>

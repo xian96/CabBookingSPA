@@ -18,4 +18,8 @@ export class CarService {
     return this.apiService.getOne('CabType', id);
   }
 
+  deleteCarById(id: number): Observable<any>{
+    return this.apiService.delete('Admin/CabType', id);
+  }
+
 }

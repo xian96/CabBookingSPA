@@ -11,6 +11,10 @@ import { CarDetailComponent } from './car-detail/car-detail.component';
 import { PlaceComponent } from './place/place.component';
 import { BookingComponent } from './booking/booking.component';
 import { BookingHistoryComponent } from './booking-history/booking-history.component';
+import { PlaceFormComponent } from './place/place-form/place-form.component';
+import { CarFormComponent } from './car-detail/car-form/car-form.component';
+import { BookingHistoryFormComponent } from './booking-history/booking-history-form/booking-history-form.component';
+import { BookingFormComponent } from './booking/booking-form/booking-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { BookingHistoryComponent } from './booking-history/booking-history.compo
     CarDetailComponent,
     PlaceComponent,
     BookingComponent,
-    BookingHistoryComponent
+    BookingHistoryComponent,
+    PlaceFormComponent,
+    CarFormComponent,
+    BookingHistoryFormComponent,
+    BookingFormComponent
   ],
   imports: [
     BrowserModule,

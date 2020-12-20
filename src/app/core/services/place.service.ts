@@ -13,4 +13,8 @@ export class PlaceService {
   getAllPlace(): Observable<Place[]>{
     return  this.apiService.getAll('Place');
   }
+
+  deleteCarById(id: number): Observable<any>{
+    return this.apiService.delete('Admin/Place', id);
+  }
 }

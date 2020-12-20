@@ -11,7 +11,7 @@
             {{place.placeName}}
           </a>
         </h5>
-        <a (click)="update(place.placeId)" class="btn btn-warning ">Update</a>
+        <a [routerLink]="['/placeForm', place.placeId]" class="btn btn-warning ">Update</a>
         <a (click)="delete(place.placeId)" class="btn btn-danger float-right">Delete</a>
 
       </div>

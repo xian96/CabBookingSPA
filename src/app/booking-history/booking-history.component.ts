@@ -19,12 +19,17 @@ export class BookingHistoryComponent implements OnInit {
     });
   }
 
-  update(id:number){
-    console.log(id);
-  }
-
   delete(id:number){
     console.log(id);
+    this.bookingHistorService.deleteCarById(id).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (err: any) => {
+        console.log(err);
+        alert(`fail`);
+      }
+    );
   }
 
 }

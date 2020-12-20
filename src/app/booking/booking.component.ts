@@ -18,13 +18,18 @@ export class BookingComponent implements OnInit {
       this.bookings = response;
     });
   }
-  
-  update(id:number){
-    console.log(id);
-  }
 
   delete(id:number){
     console.log(id);
+    this.bookingService.deleteCarById(id).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (err: any) => {
+        console.log(err);
+        alert(`fail`);
+      }
+    );
   }
 
 }

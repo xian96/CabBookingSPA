@@ -32,7 +32,7 @@
 
           </a>
         </h5>
-        <a (click)="update(booking.id)" class="btn btn-warning ">Update</a>
+        <a [routerLink]="['/bookingForm', booking.id]" class="btn btn-warning ">Update</a>
         <a (click)="delete(booking.id)" class="btn btn-danger float-right">Delete</a>
       </div>
     </div>

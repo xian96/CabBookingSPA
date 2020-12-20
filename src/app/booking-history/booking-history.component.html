@@ -31,7 +31,7 @@
             </div>
           </a>
         </h5>
-        <a (click)="update(bookingHistory.id)" class="btn btn-warning ">Update</a>
+        <a [routerLink]="['/bookingHistoryForm', bookingHistory.id]" class="btn btn-warning ">Update</a>
         <a (click)="delete(bookingHistory.id)" class="btn btn-danger float-right">Delete</a>
 
       </div>

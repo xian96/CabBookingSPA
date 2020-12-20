@@ -19,11 +19,16 @@ export class PlaceComponent implements OnInit {
     });
   }
 
-  update(id:number){
-    console.log(id);
-  }
-
   delete(id:number){
     console.log(id);
+    this.placeService.deleteCarById(id).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (err: any) => {
+        console.log(err);
+        alert(`can not do this! the reason is :---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Booking_Place_FromPlaceId". The conflict occurred in database "JasonXing_CabBookingDb", table "dbo.Booking", column 'FromPlaceId'.`);
+      }
+    );
   }
 }

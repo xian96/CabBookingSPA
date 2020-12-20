@@ -13,4 +13,8 @@ export class BookingHistoryService {
   getAllBookingHistory(): Observable<BookingHistory[]>{
     return  this.apiService.getAll('BookingHistory');
   }
+
+  deleteCarById(id: number): Observable<any>{
+    return this.apiService.delete('Admin/BookingHistory', id);
+  }
 }
