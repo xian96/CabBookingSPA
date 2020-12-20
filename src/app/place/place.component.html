@@ -1,13 +1,19 @@
 <div class="container">
-  <p>place works!</p>
+  <a [routerLink]="['/placeCreate']" class="btn btn-primary d-block">
+    placeCreate
+  </a>
+  <p>All the Places</p>
   <div class="row">
-    <div class="col-6 col-lg-3 col-sm-4 col-xl-2" *ngFor="">
-      <div class="card mb-4 shadow bg-light">
+    <div class="col-6 col-lg-3 col-sm-4 col-xl-2" *ngFor="let place of places">
+      <div class="card mb-4 shadow bg-light overflow-auto">
         <h5 class="card-title d-flex justify-content-center">
-          <a [routerLink]="['/']">
-
+          <a [routerLink]="['/place', place.placeId]">
+            {{place.placeName}}
           </a>
         </h5>
+        <a (click)="update(place.placeId)" class="btn btn-warning ">Update</a>
+        <a (click)="delete(place.placeId)" class="btn btn-danger float-right">Delete</a>
+
       </div>
     </div>
   </div>

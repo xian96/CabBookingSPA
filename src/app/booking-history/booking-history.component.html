@@ -1,13 +1,39 @@
 <div class="container">
-  <p>booking-history works!</p>
+  <a [routerLink]="['/bookingGistoryCreate']" class="btn btn-primary d-block">
+    BookingHistoryCreate
+  </a>
+  <p>All the Booking Histories</p>
   <div class="row">
-    <div class="col-6 col-lg-3 col-sm-4 col-xl-2" *ngFor="">
-      <div class="card mb-4 shadow bg-light">
+    <div class="col-6 col-lg-3 col-sm-4 col-xl-3" *ngFor="let bookingHistory of bookingHistories">
+      <div class="card mb-4 shadow bg-light overflow-auto">
         <h5 class="card-title d-flex justify-content-center">
-          <a [routerLink]="['/']">
-
+          <a [routerLink]="['/bookingHistory', bookingHistory.id]">
+            <div class="col-12">
+              {{bookingHistory.bookingDate}}
+            </div>
+            <div class="col-12">
+              {{bookingHistory.bookingTime}}
+            </div>
+            <div class="col-12">
+              {{bookingHistory.contactNo}}
+            </div>
+            <div class="col-12">
+              {{bookingHistory.email}}
+            </div>
+            <div class="col-12">
+              {{bookingHistory.landmark}}
+            </div>
+            <div class="col-12">
+              {{bookingHistory.pickupAddress}}
+            </div>
+            <div class="col-12">
+              ... etc
+            </div>
           </a>
         </h5>
+        <a (click)="update(bookingHistory.id)" class="btn btn-warning ">Update</a>
+        <a (click)="delete(bookingHistory.id)" class="btn btn-danger float-right">Delete</a>
+
       </div>
     </div>
   </div>

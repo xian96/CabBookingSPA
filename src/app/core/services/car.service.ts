@@ -11,11 +11,11 @@ export class CarService {
   constructor(private apiService: ApiService) { }
 
   getAllCar(): Observable<Car[]>{
-    return  this.apiService.getAll('cabType');
+    return  this.apiService.getAll('CabType');
   }
 
   getCarById(id: number): Observable<any>{
-    return this.apiService.getOne('cabType', id);
+    return this.apiService.getOne('CabType', id);
   }
 
 }

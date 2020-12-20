@@ -1,13 +1,39 @@
 <div class="container">
-  <p>booking works!</p>
+  <a [routerLink]="['/bookingCreate']" class="btn btn-primary d-block">
+    bookingCreate
+  </a>
+  <p>All the Bookings</p>
   <div class="row">
-    <div class="col-6 col-lg-3 col-sm-4 col-xl-2" *ngFor="">
-      <div class="card mb-4 shadow bg-light">
+    <div class="col-6 col-lg-3 col-sm-4 col-xl-3" *ngFor="let booking of bookings">
+      <div class="card mb-4 shadow bg-light overflow-auto">
         <h5 class="card-title d-flex justify-content-center">
-          <a [routerLink]="['/']">
-            
+          <a [routerLink]="['/booking', booking.id]">
+            <div class="col-12">
+              {{booking.bookingDate}}
+            </div>
+            <div class="col-12">
+              {{booking.bookingTime}}
+            </div>
+            <div class="col-12">
+              {{booking.contactNo}}
+            </div>
+            <div class="col-12">
+              {{booking.email}}
+            </div>
+            <div class="col-12">
+              {{booking.landmark}}
+            </div>
+            <div class="col-12">
+              {{booking.pickupAddress}}
+            </div>
+            <div class="col-12">
+              ... etc
+            </div>
+
           </a>
         </h5>
+        <a (click)="update(booking.id)" class="btn btn-warning ">Update</a>
+        <a (click)="delete(booking.id)" class="btn btn-danger float-right">Delete</a>
       </div>
     </div>
   </div>
