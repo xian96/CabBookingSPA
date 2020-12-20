@@ -44,11 +44,15 @@ export class ApiService {
     .pipe(map((response) => response));
   }
 
-  update(){
-
+  update(path: string, resource: any, options?: any): Observable<any>{
+    return this.http
+    .put(`${environment.apiUrl}${path}`, resource, {headers: this.headers} )
+    .pipe(map((response) => response));
   }
 
-  delete(){
-    
+  delete(path: string, id: number): Observable<any>{
+    return this.http
+    .delete(`${environment.apiUrl}${path}/${id}`)
+    .pipe(map((response) => response));
   }
 }

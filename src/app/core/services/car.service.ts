@@ -14,4 +14,8 @@ export class CarService {
     return  this.apiService.getAll('cabType');
   }
 
+  getCarById(id: number): Observable<any>{
+    return this.apiService.getOne('cabType', id);
+  }
+
 }
