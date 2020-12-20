@@ -13,8 +13,14 @@ export class BookingService {
   getAllBooking(): Observable<Booking[]>{
     return  this.apiService.getAll('Booking');
   }
+  getBookingById(id: number): Observable<any>{
+    return this.apiService.getOne('Booking', id);
+  }
 
-  deleteCarById(id: number): Observable<any>{
+  updateBooking(car: Booking): Observable<Booking>{
+    return  this.apiService.update('Admin/Booking', car);
+  }
+  deleteBookingById(id: number): Observable<any>{
     return this.apiService.delete('Admin/Booking', id);
   }
 }

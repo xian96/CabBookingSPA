@@ -1,1 +1,19 @@
-<p>booking-history-form works!</p>
+<div class="container">
+  <p>booking-history-form works!</p>
+  <form (ngSubmit)="update()">
+    <div class="alert alert-danger" *ngIf="false">
+      Invalid email/password
+    </div>
+    <div class="form-group">
+      <label for="lblpickupAddress">pickupAddress</label>
+      <input type="text" class="form-control" id="pickupAddress" aria-describedby="pickupAddressHelp"
+        name="pickupAddress" [(ngModel)]="bookingHistory.pickupAddress" />
+    </div>
+    <div class="form-group">
+      <label for="lblpickupAddress">email</label>
+      <input type="text" class="form-control" id="pickupAddress" aria-describedby="pickupAddressHelp"
+        name="pickupAddress" placeholder="{{bookingHistory.email}}" disabled />
+    </div>
+    <input type="submit" class="btn btn-primary" value="submit" />
+  </form>
+</div>

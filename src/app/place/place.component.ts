@@ -21,7 +21,7 @@ export class PlaceComponent implements OnInit {
 
   delete(id:number){
     console.log(id);
-    this.placeService.deleteCarById(id).subscribe(
+    this.placeService.deletePlaceById(id).subscribe(
       (response) => {
         console.log(response);
       },

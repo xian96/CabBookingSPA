@@ -1,1 +1,14 @@
-<p>place-form works!</p>
+<div class="container">
+  <p>place-form works!</p>
+  <form (ngSubmit)="update()">
+    <div class="alert alert-danger" *ngIf="false">
+      Invalid email/password
+    </div>
+    <div class="form-group">
+      <label for="lblplaceName">placeName</label>
+      <input type="text" class="form-control" id="placeName" aria-describedby="placeNameHelp" name="placeName"
+        [(ngModel)]="place.placeName" />
+    </div>
+    <input type="submit" class="btn btn-primary" value="submit" />
+  </form>
+</div>
